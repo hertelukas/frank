@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Frank"
-config/features=PackedStringArray("4.2", "Forward Plus")
+run/main_scene="res://scenes/MainMenu.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Frank"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations.de.translation", "res://translations.en.translation")

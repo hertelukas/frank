@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfn3ixfav0q7w"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_38miv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_38miv")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33
+anchor_top = 0.5
+anchor_right = 0.33
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 2
+text = "KEY_TITLE"
+
+[node name="CreateButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "KEY_CREATE_LOBBY"
+
+[node name="ExitButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "KEY_EXIT"
+
+[connection signal="pressed" from="Menu/CreateButton" to="." method="OnCreatePressed"]
+[connection signal="pressed" from="Menu/ExitButton" to="." method="OnExitPressed"]
